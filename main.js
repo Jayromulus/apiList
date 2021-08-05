@@ -6,7 +6,8 @@ fetch(mainUrl)
   .catch(err => console.dir(err))
 
 function display(json) {
-  const verified = json.entries.filter(value => value.Auth == "" && value.Cors == 'yes');
+  const verified = json.entries.filter(value => value.Auth == "" && value.Cors == 'yes' && value.HTTPS == true);
+  console.log(verified)
 
   const list = document.createElement('ul')
   verified.map((api, index) => {
